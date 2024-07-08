@@ -3,14 +3,21 @@
     Nesting
 */
 
-let password = "cat dog";
+let score = 80;
 
-if(password.length >= 6){
-    if(password.indexOf(' ') !== -1){
-        console.log("Password cannot include spaces");
+if(score >= 90) {
+    if(score >= 98) {
+        console.log("EXTRA CONGRATS, YOU GET AN A+");
     } else {
-        console.log("Valid Password!!");
+        console.log("YOU GOT AN A!");
     }
+} else if (score >= 80){
+    console.log("YOU GOT B!");
+} else if (score >= 70){
+    console.log("YOU GET A C!");
+} else if (score >= 60){
+    console.log("YOU GOT A D!")
 } else {
-    console.log("Password too short");
+    console.log("OU GET AN F");
 }
+
