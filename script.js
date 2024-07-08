@@ -2,10 +2,11 @@
     Logical Operators- AND
 */
 
-let password = "catdog";
+let color = "purple";
+let animal = "toad";
 
-if (password.length >= 6 && password.indexOf(" ") !== -1){
-    console.log('Password must not contain spaces!');
+if (color === "purple" && animal === "Toad" ){
+    console.log(`Yay ${color} ${animal}`);
 } else {
-    console.log("Password is valid!");
+    console.log(`BOO NOT ${color} ${animal} :(`);
 }
