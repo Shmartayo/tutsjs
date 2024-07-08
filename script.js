@@ -1,23 +1,11 @@
 /* 
-    Conditionals- Making decisions with code
-    Nesting
+    Logical Operators- AND
 */
 
-let score = 80;
+let password = "catdog";
 
-if(score >= 90) {
-    if(score >= 98) {
-        console.log("EXTRA CONGRATS, YOU GET AN A+");
-    } else {
-        console.log("YOU GOT AN A!");
-    }
-} else if (score >= 80){
-    console.log("YOU GOT B!");
-} else if (score >= 70){
-    console.log("YOU GET A C!");
-} else if (score >= 60){
-    console.log("YOU GOT A D!")
+if (password.length >= 6 && password.indexOf(" ") !== -1){
+    console.log('Password must not contain spaces!');
 } else {
-    console.log("OU GET AN F");
+    console.log("Password is valid!");
 }
-
