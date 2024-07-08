@@ -1,26 +1,38 @@
 /* 
-    ARRAYS - Ordered collections of values
-    ARRAY METHODS
-    push - adds to the end 
-    pop - removes from the end
-    shift -  remove from the front
-    unshift - add to the front
-    concat- merge arrays
-    includes - look for a value
-    indexOf - just like str.indexOf
-    join - crates a string from array
-    reverse - reverses an array
-    slice - copy portion of an array
-    splice - remove/replace elements in an array
-    sort - sorts an array
-    */
+    #Classes are user defined datatypes
+    #OBJECTS (Are instances of classes)
+    - Objects are collections of properties.
+    - Properies are a key-value pair
+    - Rather than accessing data using an index, we use custom
+      keys
+*/
 
-let nums = new Array(5,23,99,-10);
-
-nums.push(60);
-nums.push(80);
-nums.push(45);
+const user = {
+    firstname: 'Shmartayo',
+    lastname: 'Ayanda',
+    email: 'kunlexzy4@gmail.com',
+    is_Admin: true
+}
 
 
+// adding new properties to an object
+user.username = 'Shmartayo1';
 
-console.log(nums);
+// You cam also add am array to a strimg 
+user.friends = new Array(
+    {
+        name: 'Shmartayo',
+         username: 'Me', 
+        feature: 'Myself'
+    },
+    {
+        name: 'Ayokunle',
+         username: 'Kunlexzy', 
+        feature: 'SuperStar'
+    },
+);
+
+console.log(user);
+
+
+const friends = [{firstName: 'Tammy', age: 30, username: 'TamTam'}, {firstName: 'panda', age:73, username: 'Pandaman'}];
