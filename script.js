@@ -1,20 +1,16 @@
 /* 
-    Conditionals
-    Making decisions with code
+    Conditionals- Making decisions with code
+    Nesting
 */
 
-let score = 40;
+let password = "cat dog";
 
-if (score >= 90){
-    console.log("You got A++");
-} else if(score >= 80){
-    console.log("You got A+");
-} else if(score >= 70){
-    console.log("You got A-");
-} else if(score >= 60){
-    console.log("You got B");
-} else if(score >= 50){
-    console.log("You got c");
+if(password.length >= 6){
+    if(password.indexOf(' ') !== -1){
+        console.log("Password cannot include spaces");
+    } else {
+        console.log("Valid Password!!");
+    }
 } else {
-    console.log("You got an F");
+    console.log("Password too short");
 }
