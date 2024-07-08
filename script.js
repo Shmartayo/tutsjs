@@ -3,17 +3,18 @@
     Making decisions with code
 */
 
-// let score = 70;
+let score = 40;
 
-// if (score > 90){
-//     console.log("You got A+");
-// } else {
-//     console.log("You did not get an A+");
-// }
-let coin = Math.random();
-
-if(coin >= 0.5){
-    console.log('Heads');
+if (score >= 90){
+    console.log("You got A++");
+} else if(score >= 80){
+    console.log("You got A+");
+} else if(score >= 70){
+    console.log("You got A-");
+} else if(score >= 60){
+    console.log("You got B");
+} else if(score >= 50){
+    console.log("You got c");
 } else {
-    console.log('Tails');
+    console.log("You got an F");
 }
