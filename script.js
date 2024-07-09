@@ -1,25 +1,15 @@
-/* Loops - Doing things repeatedly */
+// Guessimg game
+let num = 7;
+let guess = prompt("Please Guess A Number!");
 
-//Add the comtemts of am array
-const purchases = new Array(19.99,9.50,4.25,28.75,86.20,1.99,104.50,2.85);
-function addArray(array) {
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-
-        sum +=array[i];
+while(guess !== num && guess <= 10){
+    if(guess < 7){
+        console.log(`${guess} IS TOO LOW!`);
+        guess = prompt("Please Guess A Number!");
+    } else if(guess > 7){
+        console.log(`${guess} IS TOO HIGH`);
+    } else {
+        alert("YOU GUESSED RIGHT");
     }
-    console.log(sum);
 }
 
-addArray(purchases);
-
-
-// let password = 'lol';
-
-// let guess = prompt('Guess the password!');
-
-// while(guess !== password){
-//     console.log('Try again!')
-//     guess = prompt('Guess the password!');
-// }
-// console.log('You did it !!');
