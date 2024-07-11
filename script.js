@@ -1,35 +1,20 @@
-// Guessing game
-const generateRandom = () => {
-    return Math.floor(Math.random() * 10) + 1;
-}
+// A function that returns the smallest number in an array
 
-const getInput = () => {
-    let guess = parseInt(prompt('Enter a number'));
-    while (Number.isNaN(guess)) {
-        guess = parseInt(prompt("Please Enter a Valid Number"));
-    }
-    return guess;
-}
+const scores = new Array(96,99,97,92,90);
 
-const startGame = () => {
-    const targetNum = generateRandom();
-    let guess = getInput();
-    while(guess !== targetNum) {
-        if(guess > targetNum){
-            console.log(`${guess} is too high`);
-        } else {
-            console.log(`${guess} is too low`);
+const minArray = (array) => {
+    let x;
+    let val = array[0];
+
+    for(num of array){
+        x = num;
+        if (x <= val){
+            val = x;
         }
-        /* 
-            Upwards would run an infinite loop, to avoid that 
-            we need a new guess everytime we are looping
-        */
-        guess = getInput();
     }
-    alert("You Win");
+    return val;
 }
 
-startGame();
-
+minArray(scores);
 
 
