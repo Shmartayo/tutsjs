@@ -1,39 +1,17 @@
-// A function that returns the largest number in an array
+//Arrays- Accessing values in multi-dimensional arrays
+// Shopping list - pushing my shopping list to an organized detailed array
 
-const scores = new Array(96,99,97,92,90);
+let listArr = [['cereal', 3], ['milk', 2], ['bananas', 3], ['juice', 2], ['eggs', 12]];
 
-const maxArray = (array) => {
-    let x;
-    let val = array[0];
+const arr = (myList) => {
+    let sent = new Array();
 
-    for(num of array){
-        x = num;
-        if (x >= val){
-            val = x;
-        }
+    for(item of myList){
+        let val = `${item[0]} has ${item[1]} Quantity`;
+        sent.push(val);
     }
-    return val;
+
+    return sent;
 }
 
-maxArray(scores);
-
-
-let myStr = `I am a "double quoted" string inside "double quotes"`;
-console.log(myStr);
-
-// let ourStr = "I come first. " + "I come second";
-// console.log(ourStr);
-
-let ourName = "freeCodeCamp";
-let ourStr = "Hello, our name is " + ourName + ", how are you ?";
-
-console.log(ourStr);
-
-
-const wordBlanks = (myNoun, myAdjective, myVerb, myAdverb) => {
-    let result = "";
-    result += `The ${myAdjective} ${myNoun} ${myVerb} to the store ${myAdverb}`;
-    return result;
-}
-
-console.log(wordBlanks('dog', 'big', 'ran', 'quickly'));
+console.log(arr(listArr));
