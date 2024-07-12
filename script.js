@@ -1,17 +1,18 @@
-//Arrays- Accessing values in multi-dimensional arrays
-// Shopping list - pushing my shopping list to an organized detailed array
+// Stand in Line 
+// A queue is a data structure where items are kept in order (FIFO)
+// Representing functionalities of a queue data structure
 
-let listArr = [['cereal', 3], ['milk', 2], ['bananas', 3], ['juice', 2], ['eggs', 12]];
+const nextInLine = (arr, item) => {
+// add am item to the emd of the array
+arr.push(item);
 
-const arr = (myList) => {
-    let sent = new Array();
+// remove amd returm the value from the fromt
 
-    for(item of myList){
-        let val = `${item[0]} has ${item[1]} Quantity`;
-        sent.push(val);
-    }
+return arr.shift();
 
-    return sent;
 }
 
-console.log(arr(listArr));
+let sample = [1,2,3,4,5,6];
+console.log('Before: ' + JSON.stringify(sample));
+nextInLine(sample, 7);
+console.log('After: ' + JSON.stringify(sample));
