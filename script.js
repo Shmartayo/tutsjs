@@ -18,3 +18,22 @@ const maxArray = (array) => {
 maxArray(scores);
 
 
+let myStr = `I am a "double quoted" string inside "double quotes"`;
+console.log(myStr);
+
+// let ourStr = "I come first. " + "I come second";
+// console.log(ourStr);
+
+let ourName = "freeCodeCamp";
+let ourStr = "Hello, our name is " + ourName + ", how are you ?";
+
+console.log(ourStr);
+
+
+const wordBlanks = (myNoun, myAdjective, myVerb, myAdverb) => {
+    let result = "";
+    result += `The ${myAdjective} ${myNoun} ${myVerb} to the store ${myAdverb}`;
+    return result;
+}
+
+console.log(wordBlanks('dog', 'big', 'ran', 'quickly'));
