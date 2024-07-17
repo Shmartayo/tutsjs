@@ -1,82 +1,37 @@
-//Switch Statememt
+// Card counting (Black Jack card counting function)
+// functionality: when you see a low card the count goes up,
+// When you see a high card the card goes down
+// And if it a middle value card, the count stays the same
+// and then, when the count is positive the player should 
+//bet high and when the count is 0 or negative the player 
+// should bet low
 
-//It won't work becase switch statements are used to
-// only check the equality or not equality of conditions
-// solution is to remove the signs and leave the numbers.
-// const dispResult = val =>{
-//     let answer = "";
+let count = 0;
 
-//     switch (val) {
-//         case val>= 90: 
-//             answer = "A+";
-//             break;
-//         case val >= 80 : 
-//             answer= "A";
-//             break;
-//         case val >= 70:
-//             answer = "B+";
-//             break;
-//         case val >= 60: 
-//             answer = "B";
-//             break;
-//         case val >= 50: 
-//             answer = "c";
-//             break;
-//         case val < 40: 
-//             answer = "F";
-//             break;
-
-//         default:
-//             answer = "Invalid Score";
-//             break;
-//     }
-
-//     return answer;
-// }
-
-// console.log(dispResult("hello"));
-
-// const chainToSwitch = val => {
-//     let answer = "";
-
-//     if(val === "bob") {
-//         answer = "Marley";
-//     } else if(val === 42){
-//         answer = "The Answer";
-//     } else if(val === 1) {
-//         answer = "There is no #1";
-//     } else if (val === 99) {
-//         answer = "Missed me by this much!";
-//     } else if (val === 7) {
-//         answer = "Ate Nine";
-//     }
-
-//     return answer;
-// }
-
-const chainToSwitch = val => {
-    let answer = "";
-
-    switch(val) {
-
-    
-        case "bob":
-            answer = "Marley";
+const cc = card => {
+    switch(card){
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count++;
+            break
+        case 10:
+        case "J":
+        case "Q":
+        case "K":
+        case "A":
+            count--;
             break;
-        
-        case  42:
-            answer = "The Answer";
-            break;
-        case 1:
-            answer = "There is no #1";
-            break;
-        case 99:
-            answer = "Missed me by this much!";
-            break;
-        case 7:
-            answer = "Ate Nine";
-        break;
     }
-
-    return answer;
+    let holdbet;
+    holdbet = count > 0 ? "hold": "bet";
+    return count + " " + holdbet;
 }
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+    
+
+console.log(cc('4'));
+
+// K q J 10 9 8 7 6 5 4 3 2 A
