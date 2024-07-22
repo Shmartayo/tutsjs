@@ -1,40 +1,22 @@
 /*
-    Generate Random Fractions
-    There is a way to create a random decimal number in javaScript
-    it is with the Math.random() function
+    Use the parseInt() Function
+    Which takes a string and converts it to an integer
 */
-
-function randomFraction (){
-    return Math.random();
+function convertToInteger(str){
+    return parseInt(str);
 }
 
-console.log(randomFraction());
+convertToInteger("5");
 
 /**
- * Generate random Whole Numbers
-*/
+ * Use the parseInt Function with a Radix
+ * A Radix specifies the base of a number in a string such as
+ * base 2, base 7, etc.
+ */
 
-
-
-function wholeNumFunction (){
-    return Math.round(Math.random() * 10);
+function convertToIntegerFromBinary(str){
+    return parseInt(str,2);
 }
 
-console.log(wholeNumFunction());
-
-let randomNumberBetween0and19 = Math.floor(Math.random()* 20); 
-
-function randomWholeNum() {
-    return Math.floor(Math.random() * 10);
-}
-
-console.log(randomWholeNum());
-
-/**
- * Generating random numbers within a range
-*/
-function ourRandomRange(ourMin, ourMax){
-    return Math.floor(Math.random()*(ourMax- ourMin + 1)) + ourMin;
-}
-ourRandomRange(5,15);
+convertToIntegerFromBinary("10011");
 
