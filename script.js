@@ -1,64 +1,40 @@
-//Coding Challenge Profile Look Up
-
-/* 
-    we pass in a name and a property and it's going to return
-    the value of that property,and if the contact does
-    not exist it should return "No such contact" and if the
-    contact exists and the property doesn't then it
-    should return "No such property"
+/*
+    Generate Random Fractions
+    There is a way to create a random decimal number in javaScript
+    it is with the Math.random() function
 */
 
-let contacts = [
-    {
-        "firstName" : "Akira",
-        "LastName": "Laine",
-        "number":"0543236543",
-        "likes":["Pizza","Coding", "Brownie Points"]
-    },
-    {
-        "firstName" : "Harry",
-        "LastName": "Porter",
-        "number":"0994372684",
-        "likes":["Hogwarts","Magic", "Hagrid"]
-    },
-    {
-        "firstName" : "Sherlock",
-        "LastName": "Holmes",
-        "number":"0487345643",
-        "likes":["Intriguing Cases", "Violin"]
-    },
-    {
-        "firstName" : "Kristian",
-        "LastName": "Vos",
-        "number":"unknown",
-        "likes":["JavaScript","gaming", "Foxes"]
-    }
-    
-]
-
-// function lookUpProfile(name, prop){
-//     for(let i = 0; i < contacts.length; i++){
-//         if(!contacts[i]["firstName"] == name){
-//             return "No such contact";
-//         } else {
-//             if(!contacts[i][prop]){
-//                 return "No such property";
-//             } else{
-//                 return contacts[i][prop];
-//             }
-//         }
-//     }
-// }
-
-function lookUpProfile(name,prop){
-    for(let i = 0; i <contacts.length; i++){
-        // Check if the name is a name in the contact list
-        if(contacts[i]["firstName"] === name){
-            return contacts[i][prop]|| "No such operator";
-        }
-    }
-    return "No such contact";
+function randomFraction (){
+    return Math.random();
 }
 
-let data = lookUpProfile("Akira", "likes");
-console.log(data);
+console.log(randomFraction());
+
+/**
+ * Generate random Whole Numbers
+*/
+
+
+
+function wholeNumFunction (){
+    return Math.round(Math.random() * 10);
+}
+
+console.log(wholeNumFunction());
+
+let randomNumberBetween0and19 = Math.floor(Math.random()* 20); 
+
+function randomWholeNum() {
+    return Math.floor(Math.random() * 10);
+}
+
+console.log(randomWholeNum());
+
+/**
+ * Generating random numbers within a range
+*/
+function ourRandomRange(ourMin, ourMax){
+    return Math.floor(Math.random()*(ourMax- ourMin + 1)) + ourMin;
+}
+ourRandomRange(5,15);
+
