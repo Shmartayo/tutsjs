@@ -1,42 +1,34 @@
-/**Difference between let and var
- * Let does not allow you define a variable twice in the same scope
- *  "use strict" - This enables strict mode in writing javaScript code
- *  which catches common coding mistakes and unsafe actions
- * (alot of people use "use strict" in a whole javaScript file or inside a function
- * to catch coding mistakes)
- * 
-*/ 
-
-/** Compare Scopes of the var and let Keywords
- * When you declare a variable with "var" it is declared globally
- * Or locally when it's declared inside a function
- * However, the scope of let is limited to the block statement
- * or expression
+/* Declare a Read-Only Variable with the const keyword
+    Const has all the features of let but it is read-only
+    you can not reassign const.
 */
-// var keyword scope
-function checkScope(){
-    "use Strict"
-    let i = "function Scope";
-    if(true){
-        i = "block Scope";
-        console.log("Block Scope i is: " , i);
+
+function printManyTimes(str){
+    "use strict"
+
+    let sentence = str + " is cool!";
+    sentence = str + " is amazing!";
+
+    for (let i = 0; i < str.length; i+=2){
+        console.log(sentence);
     }
-    console.log("Function Scope i is: ", i);
-    return i;
 }
 
-checkScope();
+printManyTimes("freeCodeCamp"); // Would work
 
-//let keyword scope 
-function checkScope(){
-    "use Strict"
-    let i = "function Scope";
-    if(true){
-        let i = "block Scope";
-        console.log("Block Scope i is: " , i);
+/*              const 
+    It is best practice to use capital letters for a const
+    declared variable
+*/
+function printManyTimes(str){
+    "use strict"
+
+    const SENTENCE = str + " is cool!";
+
+
+    for (let i = 0; i < str.length; i+=2){
+        console.log(SENTENCE);
     }
-    console.log("Function Scope i is: ", i);
-    return i;
 }
 
-checkScope();
+printManyTimes("freeCodeCamp"); 
