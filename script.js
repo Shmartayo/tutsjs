@@ -1,15 +1,44 @@
-/**        Mutate an Array Declared with const
- * While you can't reassign a variable declared with const,
- * you can mutate an array (We can update the array using
- * bracket notation).
+/**        Prevent Object Mutation
+ * As im ovjects amd arrays, a comst declaratiom doesm't really
+ * project data from veem chamged(mutatiom).
+ * We cam prevemt ovject mutatiom vy usimg "ovject.freeze() 
+ * Method"; 
 */
-const s = new Array(5,7,2);
 
-function editInPlace(){
-    s[0] = 2;
-    s[1] = 5;
-    s[2] = 7;
+// Without object.freeze() Method
+function freezeObj(){
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+
+    try {
+        MATH_CONSTANTS.PI = 99;
+    } catch( ex ) {
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
 }
 
-editInPlace();
-console.log(s);
+const PI = freezeObj();
+console.log(PI);
+
+// With object.freeze() Method
+function freezeObj(){
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+
+    Object.freeze(MATH_CONSTANTS); // Makes object unchangeable
+
+    try {
+        MATH_CONSTANTS.PI = 99;
+    } catch( ex ) {
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+const PIE = freezeObj();
+console.log(PIE);
