@@ -1,34 +1,15 @@
-/* Declare a Read-Only Variable with the const keyword
-    Const has all the features of let but it is read-only
-    you can not reassign const.
+/**        Mutate an Array Declared with const
+ * While you can't reassign a variable declared with const,
+ * you can mutate an array (We can update the array using
+ * bracket notation).
 */
+const s = new Array(5,7,2);
 
-function printManyTimes(str){
-    "use strict"
-
-    let sentence = str + " is cool!";
-    sentence = str + " is amazing!";
-
-    for (let i = 0; i < str.length; i+=2){
-        console.log(sentence);
-    }
+function editInPlace(){
+    s[0] = 2;
+    s[1] = 5;
+    s[2] = 7;
 }
 
-printManyTimes("freeCodeCamp"); // Would work
-
-/*              const 
-    It is best practice to use capital letters for a const
-    declared variable
-*/
-function printManyTimes(str){
-    "use strict"
-
-    const SENTENCE = str + " is cool!";
-
-
-    for (let i = 0; i < str.length; i+=2){
-        console.log(SENTENCE);
-    }
-}
-
-printManyTimes("freeCodeCamp"); 
+editInPlace();
+console.log(s);
