@@ -1,48 +1,16 @@
-/*  <<<== Use Destructuring Assignment to Assign Variables
-  from Objects ==>>>
-  This is a special synthax for neatly assigning values taken
-  from an object to a variable.
-*/
-let voxel = {x:3.6, y:7.4,z:6.54};
-/** Previous way of assigning a variable
- * let a = voxel.x;
- * let b = voxel.y;
- * let c = voxel.z;
- */
-const {x:a, y:b, z:c} = voxel;
-console.log(a);
-
-let person = {
-  name: "Ayo",
-  Age: 24,
-  isSingle : true
-}
-
-const {name:firstname, Age: Age, isSingle:isSingle} = person;
-console.log(firstname);
-
-/**
- * Coding challenge 
- * 
+/*  <<<== Use Destructuring Assignment with Nested Objects ==>>>
+We can also use Destructuring assignment operator to assign variables of nested objects
 */
 
-const AVG_TEMPERATURES = {
-  today: 77.5,
-  tomorrow: 79
+const LOCAL_FORECAST = {
+  today: {min:72, max:83},
+  tomorrow: {min:73.3, max:84.6}
 };
 
-// function getTempOfTmrw(avgTemperatures) {
-//   "use strict";
-
-//   const {today:today, tomorrow:tomorrow} = AVG_TEMPERATURES;
-//   const tempOfTomorrow = tomorrow;
-//   return tempOfTomorrow;
-// }
-function getTempOfTmrw(avgTemperatures){
+function getMaxOfTmrw(forecast){
   "use strict";
-
-  const {tomorrow : tempOfTomorrow} = avgTemperatures;
-  return tempOfTomorrow;
+  const {tomorrow : { max : maxOfTomorrow }} = forecast;
+  return maxOfTomorrow;
 }
 
-console.log(getTempOfTmrw(AVG_TEMPERATURES));
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
