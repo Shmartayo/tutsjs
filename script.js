@@ -1,85 +1,48 @@
-/*    <<<== Use the Rest Operator with Function Parameters==>>>
-  The rest operator allows you to create a function that takes
-  a variable number of arguments.
-  The rest operator is represented by 3 dots(...)
+/*  <<<== Use Destructuring Assignment to Assign Variables
+  from Objects ==>>>
+  This is a special synthax for neatly assigning values taken
+  from an object to a variable.
+*/
+let voxel = {x:3.6, y:7.4,z:6.54};
+/** Previous way of assigning a variable
+ * let a = voxel.x;
+ * let b = voxel.y;
+ * let c = voxel.z;
+ */
+const {x:a, y:b, z:c} = voxel;
+console.log(a);
+
+let person = {
+  name: "Ayo",
+  Age: 24,
+  isSingle : true
+}
+
+const {name:firstname, Age: Age, isSingle:isSingle} = person;
+console.log(firstname);
+
+/**
+ * Coding challenge 
+ * 
 */
 
-// A function that sums 3 arguments
-// const sum = (function() {
-//   return function sum(x,y,z) {
-//     const args = [x,y,z];
-//     return args.reduce((a,b) => a + b, 0);
-//   };
-// }) ();
-// console.log(sum(1,2,3));
+const AVG_TEMPERATURES = {
+  today: 77.5,
+  tomorrow: 79
+};
 
-const sum = (function() {
-  return function sum(...args) {
-    return args.reduce((a,b) => a + b, 0);
-  };
-}) ();
-console.log(sum(1,2,3));
+// function getTempOfTmrw(avgTemperatures) {
+//   "use strict";
 
-/* <<<== Use the Spread Operator to Evaluate Arrays In-Place==>>>
- **The spread operator looks just like the rest operator 
-   3dots(...) But it expands an already existing array or
-   it spreads out an array.
- * It takes an array and spreads it out to its indivdual
-    parts.
- * The spread operator can spread an array into the
-   individual elements instead of the actual array.
- * You can only use it in arguments to a function or in an
-   array literal
- * In simple terms it is used to copy the comtents of an 
-   array into another array to create a look alike array and
-   not just duplicating an array.
- *
-*/
+//   const {today:today, tomorrow:tomorrow} = AVG_TEMPERATURES;
+//   const tempOfTomorrow = tomorrow;
+//   return tempOfTomorrow;
+// }
+function getTempOfTmrw(avgTemperatures){
+  "use strict";
 
-//Without spread operator
-// let arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
-// let arr2;
-// (function(){
-//   arr2 = arr1;
-//   arr[1] = 'potato';
-// }) ();
-// console.log(arr2);
+  const {tomorrow : tempOfTomorrow} = avgTemperatures;
+  return tempOfTomorrow;
+}
 
-//With spread operator
-let arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
-let arr2;
-(function(){
-  arr2 = [...arr1];
-  arr1[0] = 'potato';
-}) ();
-console.log(arr2);
-
-
-
-
-
-/* Testing how anonymous functions work
-
-#1
-let a = 10;
-let b = 5;
-let c;
-
-(function(){
-  c = a - b;
-}) ();
-
-console.log(c);
-
-#2
-let a = 10;
-let b = 5;
-
-
-let c = (function(){
-  return a - b;
-}) ();
-
-console.log(c);
-
-*/
+console.log(getTempOfTmrw(AVG_TEMPERATURES));
