@@ -1,4 +1,4 @@
-/** Use class syntax to Define a Constructor Function
+/** Use class syntax to Define a Constructor Function Use getters and setters to Control Access to an Object
  * You can create an object using the class keyword
 */
 
@@ -43,8 +43,8 @@ function makeClass(){
   return Vegetable;
 }
 
-const vegetable = makeClass();
-const carrot = new vegetable('carrot');
+const Vegetable = makeClass();
+const carrot = new Vegetable('carrot');
 console.log(carrot.name);
 
 
@@ -59,11 +59,66 @@ function createUserClass(){
 
   return User;
 }
-const user = createUserClass();
-const userOne = new user('shmartayo', 'shmartayo@gmail.com','shmartayo');
-const userTwo = new user('Ayokunle', 'kunlexzy4@gmail.com','Hay-Yo');
-const userThree = new user('KunleAyo', 'kunlexzy5@gmail.com','Kunlexzy');
+const User = createUserClass();
+const userOne = new User('shmartayo', 'shmartayo@gmail.com','shmartayo');
+const userTwo = new User('Ayokunle', 'kunlexzy4@gmail.com','Hay-Yo');
+const userThree = new User('KunleAyo', 'kunlexzy5@gmail.com','Kunlexzy');
 
 console.log(userOne);
 console.log(userTwo);
 console.log(userThree);
+
+
+/** Use getters and setters to Control Access to an Object
+ * With a class object you often want to obtain values from the
+ * object or set a value of a property in an object.
+ * These are often called getters and setters
+*/
+
+class Book {
+  constructor(author){
+    this._author = author;
+  }
+
+  //getter
+  get author(){
+    return this._author;
+  }
+
+  // setter
+  set author(updatedAuthor){
+    this._author = updatedAuthor;
+  }
+}
+const book1 = new Book("shmartayo");
+console.log(book1._author);
+console.log(book1.author);
+console.log();
+
+
+function makeClass(){
+  class Thermostat {
+    constructor(temp){
+      this._temp = 5/9 * (temp - 32);
+    }
+
+    get temperature(){
+      return this._temp;
+    }
+
+    set temperature(updatedTemp){
+      this._temp = updatedTemp;
+    }
+  }
+
+  return Thermostat;
+}
+
+const Thermostat = makeClass();
+const thermos = new Thermostat(76);
+let temp = thermos.temperature;
+console.log(temp);
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
+
