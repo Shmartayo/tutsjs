@@ -1,16 +1,32 @@
-/*<<<== Use Destructuring Assignment with the Rest Operator ==>>>
-  We can use Destructing assigment with the Rest operator
-  to reassign array elements
+/*<<<== Use Destructuring Assignment to pass an Object 
+  as a Function's Parameters ==>>>
+  This is commonly used with API calls when you are getting
+  information from an API request, you can use Destructuring
+  to get the elements you want.
+  
 */
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
 
-const source = [1,2,3,4,5,6,7,8,9,10];
+const half = (function() {
 
-function removeFirstTwo(list){
-  const [ , , ...arr] = list;
+  return function half({max, min}) {
+    return (max + min) / 2.0
+  };
 
-  return arr;
-}
+})();
+console.log(stats);
+console.log(half(stats));
 
-const arr = removeFirstTwo(source);
-console.log(arr); // [3, 4, 5, 6, 7, 8, 9, 10]
-console.log(source); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//Previous way to pass an object into a function - but this method passes all the elements inside a function
+// const halfs = (function(){
+//   return function half(stats){
+//     return (stats.max + stats.min) /2.0;
+//   }
+// }) ();
