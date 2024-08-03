@@ -1,19 +1,28 @@
-/**Write concise Object Literal Declarations Using SImple Fields
- *  This is an easy way to define object literals
+/** Write concise Declarative Functions
+ * An object can contain a function
 */
 
-// const createPerson = (name, age, gender) => {
-
-//   // Old method
-//   return {
-//     name: name,
-//     age: age,
-//     gender: gender
-//   };
-
-
+// const bicycle = {
+//   gear: 2,
+//   // This is the long way to put a functio inside an object
+//   setGear: function(newGear){
+//     "use strict";
+//     this.gear = newGear;
+//   }
 // };
 
-const createPerson = (name,age,gender) => ({name, age, gender});
+// bicycle.setGear(3);
+// console.log(bicycle.gear);
 
-console.log(createPerson("shmartayo",24, "Male"));
+// This is the modern way of writing a function inside an object
+const bicycle = {
+  gear: 2,
+  // This is the long way to put a functio inside an object
+  setGear(newGear){
+    "use strict";
+    this.gear = newGear;
+  }
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
