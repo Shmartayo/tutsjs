@@ -1,4 +1,16 @@
 /*<<<== Use Destructuring Assignment with the Rest Operator ==>>>
-  We can also use Destructuring assignment to assign 
-  variables from Arrays.
+  We can use Destructing assigment with the Rest operator
+  to reassign array elements
 */
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+
+function removeFirstTwo(list){
+  const [ , , ...arr] = list;
+
+  return arr;
+}
+
+const arr = removeFirstTwo(source);
+console.log(arr); // [3, 4, 5, 6, 7, 8, 9, 10]
+console.log(source); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
